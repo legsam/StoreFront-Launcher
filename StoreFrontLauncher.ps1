@@ -16,6 +16,7 @@
    param ([string]$URL)
    write-host "URL : $URL" -ForegroundColor Cyan
    $HTTP_Request = [System.Net.WebRequest]::Create($URL)
+   $HTTP_Request.Timeout = 1000
    try{$HTTP_Response = $HTTP_Request.GetResponse()}
    catch{throw}
    }
